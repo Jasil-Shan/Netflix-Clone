@@ -3,7 +3,7 @@ import "./RowPost.css";
 import axios from "../../axios";
 import { API_KEY, imageUrl } from "../../constants";
 
-function RowPost() {
+function RowPost(props) {
   const [originals, setOriginals] = useState([]);
   useEffect(() => {
     axios
@@ -19,11 +19,11 @@ function RowPost() {
 
   return (
     <div className="row">
-      <h2>Netflix Originals</h2>
+      <h2>{props.title}</h2>
       <div className="posters">
         {originals.map((obj) =>
           <img
-            className="poster"
+            className={props.isSmall ? "smallPoster" : "poster"}
             src={`${imageUrl + obj.backdrop_path}`}
             alt="poster"
           />
