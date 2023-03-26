@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Banner.css";
+import axios from "../../axios";
+import { API_KEY } from "../../constants";
+
 function Banner() {
   return (
     <div className="banner">
