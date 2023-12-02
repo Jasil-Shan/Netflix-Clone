@@ -11,7 +11,7 @@ function Banner() {
       console.log(res.data.results[0])
       setMovie(res.data.results[a])
     })
-  }, [a])
+  })
   
   return (
     <div style={{backgroundImage:`url(${movie ? imageUrl + movie.backdrop_path : ""})`}} className="banner">
